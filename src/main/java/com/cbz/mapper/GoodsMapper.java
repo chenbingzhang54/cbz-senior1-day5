@@ -13,4 +13,6 @@ public interface GoodsMapper {
 	
 	public Goods getlistgoodss(int id);
 	
+	public int delete(GoodVo gv);
+	
 }
