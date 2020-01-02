@@ -15,4 +15,6 @@ public interface GoodsMapper {
 	
 	public int delete(GoodVo gv);
 	
+	public int deletee(GoodVo gv);
+	
 }
