@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengbingzhang.mapper.GoodsMapper">
+
+	<select id="getlist" resultType="GoodsBean" parameterType="GoodsVo">
+		SELECT id,name,cc,price,summ,bq,img,lname,pname from (SELECT
+		g.id,g.name,g.cc,g.price,g.summ,g.bq,g.img,k.lname,b.pname from
+		tb_goods g,tb_goodskind k,tb_brand b where g.lid = k.lid and g.pid =
+		b.pid)tt
+		<where>
+			<if test="name!='' and name !=null">
+				name like "%${name}%"
+			</if>
+		</where>
+	</select>
+
+</mapper>
